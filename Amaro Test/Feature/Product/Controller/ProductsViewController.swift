@@ -10,10 +10,15 @@ import UIKit
 
 public class ProductsViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    public var viewModel: ProductViewProtocol!
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewModel = ProductViewModel(target: self)
+        viewModel.load(sale: nil)
     }
 
     override public func didReceiveMemoryWarning() {
@@ -32,4 +37,38 @@ public class ProductsViewController: UIViewController {
     }
     */
 
+}
+
+extension ProductsViewController: ControllerDelegate {
+    
+    public func didUpdate() {
+        collectionView.reloadData()
+    }
+    
+    public func didFail(message: String) {
+        print(message)
+    }
+}
+
+extension ProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.count()
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: ProductViewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+        cell.data = viewModel.row(at: indexPath.row)
+        return cell
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView: OnSaleHeaderView = collectionView.dequeueReusableSupplementaryView(elementKind: kind, indexPath: indexPath)
+        headerView.list = viewModel.loadHeader()
+        return headerView
+    }
 }
