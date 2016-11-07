@@ -42,6 +42,6 @@ public class ProductViewModel: ProductViewProtocol {
     
     private func itemOf(product: Product) -> ProductData {
         let sizes = "Sizes " + product.sizes.map { $0.size }.joined(separator: " | ")
-        return ProductData(image: product.image, name: product.name, price: product.actualPrice, installments: product.installments, sizes: sizes, onSale: product.onSale)
+        return ProductData(name: product.name, price: product.actualPrice, installments: product.installments, discount: product.discountPercentage ,sizes: sizes, onSale: product.onSale, url: product.image, image: nil)
     }
 }

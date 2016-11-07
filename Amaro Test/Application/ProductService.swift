@@ -39,6 +39,13 @@ public class ProductService {
         return []
     }
     
+    public func get(at index: Int) -> Product? {
+        if products.count == 0 {
+            return nil
+        }
+        return products[index]
+    }
+    
     public func listCar() -> [Cart] {
         return cart
     }

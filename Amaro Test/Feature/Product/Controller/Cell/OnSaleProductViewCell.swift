@@ -40,10 +40,12 @@ extension OnSaleProductViewCell: ConfigurableUI {
         labelProductName.text = data.name
         labelPrice.text = data.price
         labelInstallments.text = data.installments
-        labelSizes.text = data.sizes
+        //labelSizes.text = data.sizes
         
-        if !data.image.isEmpty {
-            imageProduct.imageFromURL(url: data.image, placeholderImage: nil, animate: true)
+        if !data.url.isEmpty {
+            imageProduct.imageFromURL(url: data.url, placeholderImage: nil, animate: false) {
+                
+            }
         }
         else {
             imageProduct.image = nil

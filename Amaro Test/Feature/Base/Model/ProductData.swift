@@ -6,13 +6,15 @@
 //  Copyright © 2016 Bruno Fernandes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct ProductData {
-    var image: String
     var name : String
     var price: String
     var installments: String
+    var discount: String
     var sizes: String
     var onSale: Bool
+    var url: String
+    var image: UIImage?
 }
