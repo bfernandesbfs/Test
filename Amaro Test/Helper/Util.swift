@@ -40,3 +40,17 @@ public extension UIFont {
                                                      context: nil).size
     }
 }
+
+extension UIScreen {
+    
+    func screnSize(byAddingMargins margin: CGFloat) -> CGFloat {
+        return bounds.width - margin
+    }
+    
+    /**
+     Detect if the current device has wide screen
+     */
+    func isWideScreen() -> Bool {
+        return bounds.height >= 568.0
+    }
+}

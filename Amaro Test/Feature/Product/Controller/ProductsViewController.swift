@@ -14,6 +14,7 @@ public class ProductsViewController: UIViewController {
     
     public var viewModel: ProductViewProtocol!
     fileprivate var isFilter: Bool = false
+    fileprivate let screen: UIScreen = UIScreen.main
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -82,9 +83,9 @@ extension ProductsViewController: ControllerDelegate {
     }
     
     public func didFail(message: String) {
-        let alertController = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: String.localized(id: "label.alert.info"), message: message, preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Ok",style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: String.localized(id: "label.alert.Ok"),style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:nil)
     }
@@ -113,6 +114,17 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return isFilter ? .zero : CGSize(width: collectionView.frame.width, height: 240.0)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let margin:CGFloat = 4.0
+        let numberOfColumns = 2
+        let size = screen.screnSize(byAddingMargins: margin)
+        
+        let itemWidth = (size - margin) / CGFloat(numberOfColumns)
+        
+        return CGSize(width: itemWidth - CGFloat(margin), height: 250.0)
     }
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
