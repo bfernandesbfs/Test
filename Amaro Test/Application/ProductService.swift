@@ -25,6 +25,9 @@ public class ProductService {
         cart     = []
     }
     
+    /*
+     Product Function
+     */
     public func list(onSale: Bool? = nil, falid:((_ message: String)-> Void)? = nil) -> [Product] {
         do {
             if let onSale = onSale {
@@ -46,8 +49,16 @@ public class ProductService {
         return products[index]
     }
     
+    /*
+     Cart Function
+     */
+    
     public func listCar() -> [Cart] {
         return cart
+    }
+    
+    public func checkCart(product: Product) -> Bool {
+        return cart.map { $0.product }.contains(product)
     }
     
     public func addCart(at index: Int, quantity: Int ,isChange: Bool = false) {

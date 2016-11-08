@@ -18,6 +18,7 @@ public protocol DetailViewProtocol {
     var installments: String { get set }
     var discount: String { get set }
     var onSale: Bool { get set }
+    var onCart: Bool { get set }
     var sizes: [String] { get set }
     
     var didChange: ((DetailViewProtocol) -> ())? { get set }

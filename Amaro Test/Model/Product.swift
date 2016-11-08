@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Product {
+public struct Product: Equatable {
     
     public var name: String
     public var style: String
@@ -22,4 +22,8 @@ public struct Product {
     public var installments: String
     public var image: String
     public var sizes: [ProductSize]
+}
+
+public func ==(l:Product, r:Product) -> Bool {
+    return l.name == r.name && l.style == r.style
 }

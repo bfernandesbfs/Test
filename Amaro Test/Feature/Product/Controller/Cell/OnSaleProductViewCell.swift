@@ -40,7 +40,7 @@ extension OnSaleProductViewCell: ConfigurableUI {
         labelProductName.text = data.name
         labelPrice.text = data.price
         labelInstallments.text = data.installments
-        //labelSizes.text = data.sizes
+        labelSizes.text = data.sizes
         
         if !data.url.isEmpty {
             imageProduct.imageFromURL(url: data.url, placeholderImage: nil, animate: false) {

@@ -18,6 +18,7 @@ public class DetailViewModel: DetailViewProtocol {
     public var installments: String
     public var discount: String
     public var onSale: Bool
+    public var onCart: Bool
     public var sizes: [String]
     
     public var didChange: ((DetailViewProtocol) -> ())?
@@ -36,6 +37,7 @@ public class DetailViewModel: DetailViewProtocol {
         installments = ""
         discount = ""
         onSale = false
+        onCart = false
         sizes = []
     }
     
@@ -49,14 +51,15 @@ public class DetailViewModel: DetailViewProtocol {
             installments = product.installments
             discount = product.discountPercentage
             onSale = product.onSale
-            sizes = product.sizes.map { $0.size }
+            sizes = product.sizes.filter{ $0.available }.map { $0.size }
             
+            onCart = service.checkCart(product: product)
             didChange?(self)
         }
         
     }
     
     public func addCart() {
-    
+        service.addCart(at: index, quantity: 1)
     }
 }

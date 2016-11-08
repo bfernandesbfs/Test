@@ -11,7 +11,7 @@ import Foundation
 public class ProductViewModel: ProductViewProtocol {
     
     private var items: [ProductData]
-    private let delegate: ControllerDelegate?
+    private weak var delegate: ControllerDelegate?
     private let service: ProductService
     
     public required init(target: ControllerDelegate) {
@@ -29,7 +29,9 @@ public class ProductViewModel: ProductViewProtocol {
     }
     
     public func loadHeader() -> [ProductData] {
-        return Array(items.filter { $0.onSale }[1..<4])
+        let itemsOnSale = items.filter { $0.onSale }
+        let randow = Int(arc4random_uniform(UInt32(itemsOnSale.count - 3))) + 1
+        return Array(items.filter { $0.onSale }[randow..<4])
     }
     
     public func count() -> Int {
@@ -41,7 +43,7 @@ public class ProductViewModel: ProductViewProtocol {
     }
     
     private func itemOf(product: Product) -> ProductData {
-        let sizes = "Sizes " + product.sizes.map { $0.size }.joined(separator: " | ")
+        let sizes = product.sizes.filter{ $0.available }.map { $0.size }.joined(separator: " | ")
         return ProductData(name: product.name, price: product.actualPrice, installments: product.installments, discount: product.discountPercentage ,sizes: sizes, onSale: product.onSale, url: product.image, image: nil)
     }
 }

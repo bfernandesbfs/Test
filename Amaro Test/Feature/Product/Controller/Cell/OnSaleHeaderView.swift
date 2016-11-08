@@ -13,6 +13,7 @@ public class OnSaleHeaderView: UICollectionReusableView, Reusable {
     @IBOutlet weak var pageView: UIPageControl!
     
     fileprivate var collectionViewFlowLayout: CollectionViewFlowLayout!
+    fileprivate var timer:Timer!
     
     public var list: [ProductData]! {
         didSet{
@@ -23,6 +24,11 @@ public class OnSaleHeaderView: UICollectionReusableView, Reusable {
     public override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+    }
+    
+    public override func prepareForReuse() {
+        timer.invalidate()
+        timer = nil
     }
 }
 
@@ -36,9 +42,10 @@ extension OnSaleHeaderView: ConfigurableUI {
     
     public func render() {
         collectionView.reloadData()
+        
+        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
     }
 }
-
 
 extension OnSaleHeaderView: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -69,5 +76,29 @@ extension OnSaleHeaderView: UICollectionViewDelegate, UICollectionViewDataSource
             let index:Int = Int(floatPage)
             pageView.currentPage = index
         }
+    }
+    
+    public func scrollToNext() {
+        let indexPath: IndexPath
+
+        if pageView.currentPage == list.count - 1 {
+            indexPath = IndexPath(item: 0, section: 0)
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.collectionView.alpha = 0.0
+            }, completion: { (finished:Bool) in
+                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.collectionView.alpha = 1.0
+                })
+            })
+            
+        }
+        else {
+            indexPath = IndexPath(item: pageView.currentPage + 1, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+        
+        pageView.currentPage = indexPath.row
     }
 }
