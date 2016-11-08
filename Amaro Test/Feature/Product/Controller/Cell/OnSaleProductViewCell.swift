@@ -43,9 +43,15 @@ extension OnSaleProductViewCell: ConfigurableUI {
         labelSizes.text = data.sizes
         
         if !data.url.isEmpty {
-            imageProduct.imageFromURL(url: data.url, placeholderImage: nil, animate: false) {
-                
+            if data.image != nil {
+                imageProduct.image = data.image
             }
+            else {
+                imageProduct.imageFromURL(url: data.url, placeholderImage: nil, animate: true) {
+                    self.data.image = self.imageProduct.image!
+                }
+            }
+
         }
         else {
             imageProduct.image = nil

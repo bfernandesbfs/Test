@@ -44,7 +44,7 @@ public class DetailViewController: UIViewController {
     @IBAction func addCartButtonPressed(_ sender: UIButton) {
         if sender.tag == 0 {
             viewModel.addCart()
-            let title = "Already added in bag"
+            let title = String.localized(id: "label.button.alreadyBag")
             self.buttonCart.setTitle(title, for: .normal)
             self.buttonCart.tag = 1
         }
@@ -56,17 +56,19 @@ public class DetailViewController: UIViewController {
     
     private func configureView() {
         labelSale.transform =  CGAffineTransform(rotationAngle: CGFloat.radians(degrees: -45))
+        navigationController?.navigationBar.topItem?.title = ""
     }
     
     private func getViewModel(v: DetailViewProtocol) {
         var v = v
         v.didChange = { [weak self] view in
+            self?.title = view.name
             self?.labelProductName.text = view.name
             self?.labelActualPrice.text = view.actualPrice
             self?.labelInstallments.text = view.installments
             self?.labelColor.text = view.color
             
-            let title = view.onCart ? "Already added in bag" : "Add to bag"
+            let title = view.onCart ? String.localized(id: "label.button.alreadyBag") : String.localized(id: "label.button.addBag")
             self?.buttonCart.setTitle(title, for: .normal)
             self?.buttonCart.tag = view.onCart.hashValue
             

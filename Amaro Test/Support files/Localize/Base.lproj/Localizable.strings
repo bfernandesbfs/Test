@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Amaro Test
+
+  Created by Bruno Fernandes on 11/8/16.
+  Copyright © 2016 Bruno Fernandes. All rights reserved.
+*/
+
+"label.Search.title" = "Search Products";
+"label.Search.message" = "Use a this option to filter the products";
+"label.Search.cancel" = "Cancel";
+"label.Search.withDiscount" = "With discount";
+"label.Search.withoutDiscount" = "Without discount";
+"label.Search.allProduct" = "All Products";
+
+"label.alert.info" = "Info";
+"label.alert.Ok" = "Ok";
+
+"label.button.alreadyBag" = "Already added in bag";
+"label.button.addBag" = "Add to bag";

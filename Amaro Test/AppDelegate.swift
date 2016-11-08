@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        initializeTheme()
         return true
     }
 
@@ -41,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func initializeTheme() {
+        //Navigation Bar
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : Color.primary, NSFontAttributeName :UIFont.systemFont(ofSize: 20)]
+        UINavigationBar.appearance().tintColor    = Color.primary
+        
+        //Bar Button
+        UIBarButtonItem.appearance().tintColor = Color.primary
+    }
 
 }
 

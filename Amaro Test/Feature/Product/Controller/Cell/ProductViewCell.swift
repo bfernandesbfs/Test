@@ -56,6 +56,7 @@ extension ProductViewCell: ConfigurableUI {
         }
         
         if !data.url.isEmpty {
+            imageProduct.contentMode = .scaleAspectFit
             if data.image != nil {
                 imageProduct.image = data.image
             }
@@ -66,7 +67,8 @@ extension ProductViewCell: ConfigurableUI {
             }
         }
         else {
-            imageProduct.image = nil
+            imageProduct.contentMode = .center
+            imageProduct.image = UIImage(named: "icon_noPhoto")!
         }
     }
 }

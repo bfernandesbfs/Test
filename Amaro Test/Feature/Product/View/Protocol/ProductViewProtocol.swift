@@ -14,6 +14,7 @@ public protocol ProductViewProtocol {
     
     func load(sale: Bool?)
     func loadHeader() -> [ProductData]
+    func selectedHeader(product: ProductData) -> Int
     func count() -> Int
     func row(at index: Int) -> ProductData
 }

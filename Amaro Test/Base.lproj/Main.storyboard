@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bTr-RD-jAM" id="2V9-0e-Wza">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Bi-6o-Ivq">
@@ -163,12 +163,39 @@
                             <constraint firstItem="4B3-yU-RPK" firstAttribute="leading" secondItem="Lxu-ct-mZC" secondAttribute="leading" id="xQQ-Lg-JAf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My shopping bag" id="mWB-j7-oDT"/>
+                    <navigationItem key="navigationItem" title="MY SHOPPING BAG" id="mWB-j7-oDT"/>
                     <connections>
+                        <outlet property="emptyView" destination="x0d-9B-Q9q" id="jlS-hp-xBL"/>
                         <outlet property="tableView" destination="4B3-yU-RPK" id="830-CY-E3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zow-8u-3hA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="x0d-9B-Q9q">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon_bag_empty" translatesAutoresizingMaskIntoConstraints="NO" id="Hnd-pm-TZo">
+                            <rect key="frame" x="98" y="4" width="45" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="7sk-bS-BgI"/>
+                                <constraint firstAttribute="height" constant="60" id="w4f-NE-fv0"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your bag is empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lek-1r-vVg">
+                            <rect key="frame" x="51" y="71" width="138" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Lek-1r-vVg" firstAttribute="top" secondItem="Hnd-pm-TZo" secondAttribute="bottom" constant="7" id="JuB-3h-R2K"/>
+                        <constraint firstItem="Hnd-pm-TZo" firstAttribute="centerY" secondItem="x0d-9B-Q9q" secondAttribute="centerY" constant="-30" id="ONK-zP-a5y"/>
+                        <constraint firstItem="Hnd-pm-TZo" firstAttribute="centerX" secondItem="x0d-9B-Q9q" secondAttribute="centerX" id="Oei-ea-Oxf"/>
+                        <constraint firstItem="Lek-1r-vVg" firstAttribute="centerX" secondItem="Hnd-pm-TZo" secondAttribute="centerX" id="c8l-lV-aNO"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="671.20000000000005" y="184.85757121439281"/>
         </scene>
@@ -204,7 +231,7 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWS-W9-IFI">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="250"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qek-it-ykb">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qek-it-ykb">
                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="250"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fq-J9-ysX">
@@ -220,7 +247,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 999,99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpE-J8-gqb">
-                                                                    <rect key="frame" x="8" y="24" width="59.5" height="18"/>
+                                                                    <rect key="frame" x="8" y="24" width="60" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="E7c-9i-9R3"/>
                                                                     </constraints>
@@ -238,7 +265,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3x $99,99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-Bc-6D1">
-                                                                    <rect key="frame" x="69.5" y="30" width="41" height="12"/>
+                                                                    <rect key="frame" x="70" y="30" width="41" height="12"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="12" id="ntH-ta-uiv"/>
                                                                     </constraints>
@@ -305,7 +332,6 @@
                                             <outlet property="labelProductName" destination="Pnt-gP-BBU" id="kCU-fg-y0K"/>
                                             <outlet property="labelSale" destination="7z9-QV-ac0" id="G1N-5D-9zn"/>
                                             <outlet property="labelSizes" destination="7LH-wu-t4G" id="eGi-VQ-Apw"/>
-                                            <segue destination="Uz9-jv-CNU" kind="show" id="WEO-K3-mjO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -394,7 +420,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="0JL-sp-yxg" secondAttribute="trailing" id="7wu-ZO-j6K"/>
                                                                     <constraint firstItem="0JL-sp-yxg" firstAttribute="top" secondItem="DWM-d2-2En" secondAttribute="top" constant="20" id="DD2-Yw-bS4"/>
@@ -485,9 +511,15 @@
                                 <constraint firstAttribute="bottom" secondItem="QG3-Mx-BFp" secondAttribute="bottom" id="nNu-Gs-dsP"/>
                             </constraints>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="icon_filter" id="QlO-H4-s8v">
+                            <connections>
+                                <action selector="filterButtonPressed:" destination="FKX-vC-qBh" id="5lF-Bv-Bgq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Jy8-sw-Og1" id="odx-xi-hgJ"/>
+                        <segue destination="Uz9-jv-CNU" kind="show" identifier="segueDetail" id="tyS-ag-Nlr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZg-RA-rx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,15 +685,17 @@
             </objects>
             <point key="canvasLocation" x="1418.4000000000001" y="-470.01499250374815"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="wdh-br-IJu">
             <objects>
-                <tabBarController id="6an-Ie-CBQ" sceneMemberID="viewController">
+                <tabBarController id="6an-Ie-CBQ" customClass="TabViewController" customModule="Amaro_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Cpk-jb-Zrb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Sil-Rh-Geo" kind="relationship" relationship="viewControllers" id="fOP-i1-Jo2"/>
@@ -672,11 +706,11 @@
             </objects>
             <point key="canvasLocation" x="-1220" y="-143"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="AJ3-li-RqC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sil-Rh-Geo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="QGj-Er-Oys"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_dress" id="QGj-Er-Oys"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="S7F-kh-AVR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -692,11 +726,13 @@
             </objects>
             <point key="canvasLocation" x="-268" y="-470.01499250374815"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="Foe-Bh-RNY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cST-I4-BYh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="fsq-vx-bA9"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_bag" id="fsq-vx-bA9">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="1" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hZe-6Y-a6a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -713,7 +749,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_bag" width="19" height="25"/>
+        <image name="icon_bag_empty" width="45" height="60"/>
         <image name="icon_close" width="26" height="26"/>
+        <image name="icon_dress" width="21" height="25"/>
+        <image name="icon_filter" width="5" height="20"/>
         <image name="icon_logo" width="196" height="44"/>
         <image name="icon_minus" width="18" height="2"/>
         <image name="icon_plus" width="18" height="18"/>

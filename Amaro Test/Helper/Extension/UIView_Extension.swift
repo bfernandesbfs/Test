@@ -15,6 +15,11 @@ private let defaultCornerRadius: Float = 0
 
 extension UIView {
     
+    public func delay(milliseconds:Int = 600, finished: @escaping () -> Void) {
+        let when = DispatchTime.now() + DispatchTimeInterval.milliseconds(milliseconds)
+        DispatchQueue.main.asyncAfter(deadline: when, execute: finished)
+    }
+    
     public func applyShadow(_ shadowColor: UIColor = defaultShadowColor,
                      shadowRadius: Float = defaultShadowRadius,
                      shadowOpacity: Float = defaultShadowOpacity,
@@ -58,7 +63,7 @@ extension UIView {
             let margin:   CGFloat = 4.0
             
             for (index, value) in texts.enumerated() {
-                let label = addLabel(value, color: UIColor(red:51/255, green:51/255, blue:51/255, alpha: 1.0), fontSize: fontSize)
+                let label = addLabel(value, color: Color.primary, fontSize: fontSize)
                 view.addSubview(label)
                 
                 let width = label.font.widthOfString(label.text!, constrainedToHeigth: view.frame.height).width + 10

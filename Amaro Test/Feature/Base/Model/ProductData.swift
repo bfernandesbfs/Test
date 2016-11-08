@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct ProductData {
+public struct ProductData: Equatable {
     var name : String
     var price: String
     var installments: String
@@ -17,4 +17,8 @@ public struct ProductData {
     var onSale: Bool
     var url: String
     var image: UIImage?
+}
+
+public func ==(l:ProductData, r:ProductData) -> Bool {
+    return l.name == r.name && l.price == r.price
 }

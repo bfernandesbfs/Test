@@ -52,6 +52,9 @@
 		154E73F51DD129E000DE65B3 /* BUIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E73F41DD129E000DE65B3 /* BUIStepper.swift */; };
 		154E73F71DD13A0200DE65B3 /* CartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E73F61DD13A0200DE65B3 /* CartSectionView.swift */; };
 		154E73F91DD13A1500DE65B3 /* CartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154E73F81DD13A1500DE65B3 /* CartSectionView.xib */; };
+		15CF71DD1DD1FDF90044A6DF /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CF71DC1DD1FDF90044A6DF /* TabViewController.swift */; };
+		15CF71DF1DD22CF80044A6DF /* OnSaleHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CF71DE1DD22CF80044A6DF /* OnSaleHeaderViewDelegate.swift */; };
+		15CF71E51DD236CF0044A6DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15CF71E71DD236CF0044A6DF /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,11 @@
 		154E73F41DD129E000DE65B3 /* BUIStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUIStepper.swift; sourceTree = "<group>"; };
 		154E73F61DD13A0200DE65B3 /* CartSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartSectionView.swift; sourceTree = "<group>"; };
 		154E73F81DD13A1500DE65B3 /* CartSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartSectionView.xib; sourceTree = "<group>"; };
+		15CF71DC1DD1FDF90044A6DF /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		15CF71DE1DD22CF80044A6DF /* OnSaleHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnSaleHeaderViewDelegate.swift; sourceTree = "<group>"; };
+		15CF71E01DD232550044A6DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		15CF71E61DD236CF0044A6DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15CF71E81DD236D30044A6DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,12 +186,11 @@
 				154E73A61DCF663200DE65B3 /* Feature */,
 				154E73B21DCF6B5400DE65B3 /* Helper */,
 				150A11F01DCD2621002397E4 /* Resources */,
+				15CF71E11DD233300044A6DF /* Support files */,
 				150A11C21DCD2566002397E4 /* AppDelegate.swift */,
 				150A11C61DCD2566002397E4 /* Main.storyboard */,
 				154E73F81DD13A1500DE65B3 /* CartSectionView.xib */,
-				150A11C91DCD2566002397E4 /* Assets.xcassets */,
 				150A11CB1DCD2566002397E4 /* LaunchScreen.storyboard */,
-				150A11CE1DCD2566002397E4 /* Info.plist */,
 			);
 			path = "Amaro Test";
 			sourceTree = "<group>";
@@ -362,8 +369,9 @@
 		154E73BD1DCF796600DE65B3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				154E73BE1DCF797F00DE65B3 /* Protocol */,
 				154E73C31DCF7B7600DE65B3 /* Model */,
+				154E73BE1DCF797F00DE65B3 /* Protocol */,
+				15CF71DB1DD1FD970044A6DF /* Controller */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -390,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				154E73C91DCF7D9C00DE65B3 /* ProductViewProtocol.swift */,
+				15CF71DE1DD22CF80044A6DF /* OnSaleHeaderViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -461,6 +470,32 @@
 				154E73F01DD1145B00DE65B3 /* CartViewProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15CF71DB1DD1FD970044A6DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15CF71DC1DD1FDF90044A6DF /* TabViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		15CF71E11DD233300044A6DF /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				15CF71E21DD233B20044A6DF /* Localize */,
+				150A11CE1DCD2566002397E4 /* Info.plist */,
+				150A11C91DCD2566002397E4 /* Assets.xcassets */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		15CF71E21DD233B20044A6DF /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				15CF71E71DD236CF0044A6DF /* Localizable.strings */,
+			);
+			path = Localize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +590,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 150A11B61DCD2566002397E4;
 			productRefGroup = 150A11C01DCD2566002397E4 /* Products */;
@@ -574,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				154E73F91DD13A1500DE65B3 /* CartSectionView.xib in Resources */,
+				15CF71E51DD236CF0044A6DF /* Localizable.strings in Resources */,
 				150A11CD1DCD2566002397E4 /* LaunchScreen.storyboard in Resources */,
 				150A11F21DCD26AC002397E4 /* products.json in Resources */,
 				150A11CA1DCD2566002397E4 /* Assets.xcassets in Resources */,
@@ -610,6 +647,7 @@
 				150A12051DCD2EEB002397E4 /* SizesDiskModelParser.swift in Sources */,
 				154E73BA1DCF6DE000DE65B3 /* OnSaleHeaderView.swift in Sources */,
 				150A11F71DCD2935002397E4 /* ProductSize.swift in Sources */,
+				15CF71DF1DD22CF80044A6DF /* OnSaleHeaderViewDelegate.swift in Sources */,
 				150A12031DCD2C04002397E4 /* Parseable.swift in Sources */,
 				154E73C81DCF7D7500DE65B3 /* ProductViewModel.swift in Sources */,
 				154E73CA1DCF7D9C00DE65B3 /* ProductViewProtocol.swift in Sources */,
@@ -620,6 +658,7 @@
 				150A12001DCD2BAF002397E4 /* ProductDiskModelParser.swift in Sources */,
 				154E73BC1DCF6E0300DE65B3 /* ProductViewCell.swift in Sources */,
 				150A11C31DCD2566002397E4 /* AppDelegate.swift in Sources */,
+				15CF71DD1DD1FDF90044A6DF /* TabViewController.swift in Sources */,
 				154E73F51DD129E000DE65B3 /* BUIStepper.swift in Sources */,
 				154E73B11DCF676700DE65B3 /* CartViewController.swift in Sources */,
 				154E73C51DCF7BA900DE65B3 /* ProductData.swift in Sources */,
@@ -679,6 +718,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				150A11C71DCD2566002397E4 /* Base */,
+				15CF71E01DD232550044A6DF /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -691,6 +731,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		15CF71E71DD236CF0044A6DF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15CF71E61DD236CF0044A6DF /* Base */,
+				15CF71E81DD236D30044A6DF /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -698,6 +747,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -747,6 +797,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -790,7 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K4RBK36U2H;
-				INFOPLIST_FILE = "Amaro Test/Info.plist";
+				INFOPLIST_FILE = "Amaro Test/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amaro-test.Amaro-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,7 +854,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K4RBK36U2H;
-				INFOPLIST_FILE = "Amaro Test/Info.plist";
+				INFOPLIST_FILE = "Amaro Test/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amaro-test.Amaro-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";

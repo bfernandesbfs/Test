@@ -31,7 +31,7 @@ public class ProductViewModel: ProductViewProtocol {
     public func loadHeader() -> [ProductData] {
         let itemsOnSale = items.filter { $0.onSale }
         let randow = Int(arc4random_uniform(UInt32(itemsOnSale.count - 3))) + 1
-        return Array(items.filter { $0.onSale }[randow..<4])
+        return Array(items.filter { $0.onSale }[randow..<randow + 3])
     }
     
     public func count() -> Int {
@@ -40,6 +40,12 @@ public class ProductViewModel: ProductViewProtocol {
     
     public func row(at index: Int) -> ProductData {
         return items[index]
+    }
+    
+    public func selectedHeader(product: ProductData) -> Int {
+        return items.index(where: { (p) -> Bool in
+            return p == product
+        })!
     }
     
     private func itemOf(product: Product) -> ProductData {

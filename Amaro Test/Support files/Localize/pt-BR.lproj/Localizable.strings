@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Amaro Test
+
+  Created by Bruno Fernandes on 11/8/16.
+  Copyright © 2016 Bruno Fernandes. All rights reserved.
+*/
+
+"label.Search.title" = "Filtrar os produtos";
+"label.Search.message" = "Utilize esta opção para filtrar os produtos";
+"label.Search.cancel" = "Cancelar";
+"label.Search.withDiscount" = "Com descontos";
+"label.Search.withoutDiscount" = "Sem descontos";
+"label.Search.allProduct" = "Todos Produtos";
+
+"label.alert.info" = "Informação";
+"label.alert.Ok" = "Ok";
+
+"label.button.alreadyBag" = "Adicionado na sua saloca";
+"label.button.addBag" = "Adicionar na sacola";

@@ -53,7 +53,6 @@ extension CartViewCell: ConfigurableUI {
         
         if !data.url.isEmpty {
             imageProduct.imageFromURL(url: data.url, placeholderImage: nil, animate: false) {
-                
             }
         }
         else {

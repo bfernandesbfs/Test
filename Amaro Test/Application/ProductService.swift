@@ -11,6 +11,7 @@ import Foundation
 public class ProductService {
 
     private var products: [Product]
+    private var filteredProducts: [Product]
     private var cart : [Cart]
 
     public class var shared: ProductService {
@@ -22,6 +23,7 @@ public class ProductService {
     
     private init() {
         products = []
+        filteredProducts = []
         cart     = []
     }
     
@@ -30,10 +32,12 @@ public class ProductService {
      */
     public func list(onSale: Bool? = nil, falid:((_ message: String)-> Void)? = nil) -> [Product] {
         do {
+            filteredProducts = try getProductsFromDisk()
             if let onSale = onSale {
-                return try getProductsFromDisk().filter { $0.onSale == onSale }
+                filteredProducts =  filteredProducts.filter { $0.onSale == onSale }
             }
-            return try getProductsFromDisk()
+            
+            return filteredProducts
         }
         catch {
             falid?("Opss! Error")
@@ -43,10 +47,10 @@ public class ProductService {
     }
     
     public func get(at index: Int) -> Product? {
-        if products.count == 0 {
+        if filteredProducts.count == 0 {
             return nil
         }
-        return products[index]
+        return filteredProducts[index]
     }
     
     /*
@@ -63,7 +67,7 @@ public class ProductService {
     
     public func addCart(at index: Int, quantity: Int ,isChange: Bool = false) {
         if !isChange {
-            cart.append(Cart(product: products[index], quantity: quantity))
+            cart.append(Cart(product: filteredProducts[index], quantity: quantity))
         }
         else {
             cart[index].changeQuantity(value: quantity)

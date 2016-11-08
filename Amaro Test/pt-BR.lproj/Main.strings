@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "447-d5-2Vg"; */
+"447-d5-2Vg.text" = "Cor";
+
+/* Class = "UIButton"; normalTitle = "Add to Bag"; ObjectID = "5Hh-fi-5UD"; */
+"5Hh-fi-5UD.normalTitle" = "Adicionar na sacola";
+
+/* Class = "UILabel"; text = "$ 999,99"; ObjectID = "6FI-Of-gzB"; */
+"6FI-Of-gzB.text" = "$ 999,99";
+
+/* Class = "UILabel"; text = "Black"; ObjectID = "6lp-VA-3aa"; */
+"6lp-VA-3aa.text" = "Preto";
+
+/* Class = "UILabel"; text = "PP | P | M | G"; ObjectID = "7LH-wu-t4G"; */
+"7LH-wu-t4G.text" = "PP | P | M | G";
+
+/* Class = "UILabel"; text = "99%"; ObjectID = "7z9-QV-ac0"; */
+"7z9-QV-ac0.text" = "99%";
+
+/* Class = "UILabel"; text = "Product Name"; ObjectID = "9Bn-eE-LJS"; */
+"9Bn-eE-LJS.text" = "Nome do produto";
+
+/* Class = "UILabel"; text = "3x $99,99"; ObjectID = "GVX-Bc-6D1"; */
+"GVX-Bc-6D1.text" = "3x R$99,99";
+
+/* Class = "UILabel"; text = "3x $99,99"; ObjectID = "Jc6-nA-RR4"; */
+"Jc6-nA-RR4.text" = "3x R$99,99";
+
+/* Class = "UILabel"; text = "Your bag is empty"; ObjectID = "Lek-1r-vVg"; */
+"Lek-1r-vVg.text" = "Sua sacola está vazia";
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "MbM-lV-4v2"; */
+"MbM-lV-4v2.text" = "Cor";
+
+/* Class = "UILabel"; text = "Product name"; ObjectID = "Ors-R1-LVP"; */
+"Ors-R1-LVP.text" = "Nome do produto";
+
+/* Class = "UILabel"; text = "$ 999,99"; ObjectID = "P7b-OY-Xjj"; */
+"P7b-OY-Xjj.text" = "R$ 999,99";
+
+/* Class = "UILabel"; text = "Product name"; ObjectID = "Pnt-gP-BBU"; */
+"Pnt-gP-BBU.text" = "Nome do produto";
+
+/* Class = "UILabel"; text = "99%"; ObjectID = "Qfh-UK-hag"; */
+"Qfh-UK-hag.text" = "99%";
+
+/* Class = "UILabel"; text = "Products"; ObjectID = "RhF-o6-CBQ"; */
+"RhF-o6-CBQ.text" = "Produtos";
+
+/* Class = "UILabel"; text = "$ 999,99"; ObjectID = "V0Y-Xy-f8U"; */
+"V0Y-Xy-f8U.text" = "R$ 999,99";
+
+/* Class = "UILabel"; text = "$ 999,99"; ObjectID = "WdM-8d-XCt"; */
+"WdM-8d-XCt.text" = "R$ 999,99";
+
+/* Class = "UILabel"; text = "3x $99,99"; ObjectID = "X1N-05-IoW"; */
+"X1N-05-IoW.text" = "3x $99,99";
+
+/* Class = "UILabel"; text = "99"; ObjectID = "YsT-jo-JHz"; */
+"YsT-jo-JHz.text" = "99";
+
+/* Class = "UILabel"; text = "$ 999,99"; ObjectID = "bpE-J8-gqb"; */
+"bpE-J8-gqb.text" = "R$ 999,99";
+
+/* Class = "UILabel"; text = "PP | P | M | G"; ObjectID = "jjb-FB-WIr"; */
+"jjb-FB-WIr.text" = "PP | P | M | G";
+
+/* Class = "UINavigationItem"; title = "MY SHOPPING BAG"; ObjectID = "mWB-j7-oDT"; */
+"mWB-j7-oDT.title" = "MINHA SACOLA";
+
+/* Class = "UILabel"; text = "$ 999,99"; ObjectID = "pUP-T7-zVx"; */
+"pUP-T7-zVx.text" = "R$ 999,99";
+
+/* Class = "UILabel"; text = "Product Name"; ObjectID = "vN1-XW-Ky9"; */
+"vN1-XW-Ky9.text" = "Nome do produto";

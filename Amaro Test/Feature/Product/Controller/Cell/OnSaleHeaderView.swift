@@ -15,6 +15,8 @@ public class OnSaleHeaderView: UICollectionReusableView, Reusable {
     fileprivate var collectionViewFlowLayout: CollectionViewFlowLayout!
     fileprivate var timer:Timer!
     
+    public weak var delegate: OnSaleHeaderViewDelegate?
+    
     public var list: [ProductData]! {
         didSet{
             render()
@@ -27,8 +29,10 @@ public class OnSaleHeaderView: UICollectionReusableView, Reusable {
     }
     
     public override func prepareForReuse() {
-        timer.invalidate()
-        timer = nil
+        if timer != nil {
+            timer.invalidate()
+            timer = nil
+        }
     }
 }
 
@@ -42,8 +46,9 @@ extension OnSaleHeaderView: ConfigurableUI {
     
     public func render() {
         collectionView.reloadData()
-        
-        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        if list.count > 0 {
+            timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        }
     }
 }
 
@@ -61,6 +66,10 @@ extension OnSaleHeaderView: UICollectionViewDelegate, UICollectionViewDataSource
         let cell:OnSaleProductViewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
         cell.data = list[indexPath.row]
         return cell
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectedItemOfCollection(data: list[indexPath.row])
     }
     
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

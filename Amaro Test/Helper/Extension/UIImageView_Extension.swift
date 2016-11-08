@@ -55,3 +55,24 @@ public extension UIImageView {
         }
     }
 }
+
+extension UIImage {
+    public func imageWithColor(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        color.setFill()
+        
+        let context = UIGraphicsGetCurrentContext()
+        context!.translateBy(x: 0, y: size.height)
+        context!.scaleBy(x: 1.0, y: -1.0);
+        context!.setBlendMode(CGBlendMode.normal)
+        
+        let rect = CGRect(x:0, y:0, width:size.width, height:size.height)
+        context!.clip(to: rect, mask: self.cgImage!)
+        context!.fill(rect)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()! as UIImage
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}
