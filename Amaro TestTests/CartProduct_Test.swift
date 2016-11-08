@@ -34,7 +34,7 @@ class CartProduct_Test: XCTestCase {
         index = Int(arc4random_uniform(22) + 1)
         service.addCart(at: index, quantity: 2)
         
-        let cart = service.listCar()
+        let cart = service.listCart()
         
         XCTAssertTrue(cart.count == 3, "Item not found")
     }
@@ -43,7 +43,7 @@ class CartProduct_Test: XCTestCase {
         let index = Int(arc4random_uniform(22) + 1)
         service.addCart(at: index, quantity: 10)
         
-        XCTAssertTrue(service.listCar().count == 1, "Item not found")
+        XCTAssertTrue(service.listCart().count == 1, "Item not found")
         XCTAssertTrue(service.getCart(at: 0)!.quantity == 10, "It's quantity not compatible")
         
         service.addCart(at: 0, quantity: 5, isChange: true)
@@ -55,10 +55,10 @@ class CartProduct_Test: XCTestCase {
         let index = Int(arc4random_uniform(22) + 1)
         service.addCart(at: index, quantity: 10)
         
-        XCTAssertTrue(service.listCar().count == 1, "Item not found")
+        XCTAssertTrue(service.listCart().count == 1, "Item not found")
         
         service.removeCart(at: 0)
-        XCTAssertTrue(service.listCar().count == 0, "Item found")
+        XCTAssertTrue(service.listCart().count == 0, "Item found")
     }
     
     func testPerformanceExample() {

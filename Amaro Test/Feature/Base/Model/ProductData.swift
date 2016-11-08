@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Domain transport data bettween viewModel and ViewController
 public struct ProductData: Equatable {
     var name : String
     var price: String

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Parse Json protocol
 public protocol Parseable {
     associatedtype E
     associatedtype T

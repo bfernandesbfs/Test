@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Load JSON file 
 public class Loader {
     
     static func fixture<T>(_ filePath: String) throws -> T {

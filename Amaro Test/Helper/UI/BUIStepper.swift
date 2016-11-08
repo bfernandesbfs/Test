@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Stepper custom to Cart cell
 public class BUIStepper: UIControl {
     
     public var autoRepeat: Bool = true {

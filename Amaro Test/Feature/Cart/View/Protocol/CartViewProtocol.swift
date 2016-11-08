@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Protocol View Model to Cart Controller
 public protocol CartViewProtocol {
     
     var subTotal: Double  { get set }

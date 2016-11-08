@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Protocol View Model to Detail Controller
 public protocol DetailViewProtocol {
     
     var image: String { get set }

@@ -16,6 +16,7 @@ public typealias ImageDataLoadingCompletion = (_ data: Data?, _ response: URLRes
 /// Data loading progress closure.
 public typealias ImageDataLoadingProgress = (_ completed: Int64, _ total: Int64) -> Void
 
+// Image Resquest 
 public class ImageRequest: NSObject, URLSessionDataDelegate {
     
     public class var shared: ImageRequest {

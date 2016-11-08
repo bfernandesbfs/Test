@@ -56,7 +56,7 @@ extension ProductViewCell: ConfigurableUI {
         }
         
         if !data.url.isEmpty {
-            imageProduct.contentMode = .scaleAspectFit
+            imageProduct.contentMode = .scaleAspectFill
             if data.image != nil {
                 imageProduct.image = data.image
             }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Response to Image data
 public struct Response {
     // Actual fields.
     public let data: Data!

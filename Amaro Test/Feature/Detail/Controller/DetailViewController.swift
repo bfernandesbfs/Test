@@ -41,12 +41,15 @@ public class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Action Button to Add item on Cart
     @IBAction func addCartButtonPressed(_ sender: UIButton) {
         if sender.tag == 0 {
             viewModel.addCart()
             let title = String.localized(id: "label.button.alreadyBag")
             self.buttonCart.setTitle(title, for: .normal)
             self.buttonCart.tag = 1
+            
+            NotificationCenter.default.post(name: postBadge, object: self, userInfo: ["isAdded": true])
         }
     }
     
@@ -54,11 +57,13 @@ public class DetailViewController: UIViewController {
      MARK: - Private Methods
      */
     
+    // Configure View Controller
     private func configureView() {
         labelSale.transform =  CGAffineTransform(rotationAngle: CGFloat.radians(degrees: -45))
         navigationController?.navigationBar.topItem?.title = ""
     }
     
+    // Observer protocol detail
     private func getViewModel(v: DetailViewProtocol) {
         var v = v
         v.didChange = { [weak self] view in

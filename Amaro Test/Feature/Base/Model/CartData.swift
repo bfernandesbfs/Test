@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Domain transport data bettween viewModel and ViewController
 public struct CartData {
     var url: String
     var name: String

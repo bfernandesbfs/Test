@@ -25,6 +25,26 @@ public class TabViewController: UITabBarController {
         tabBar.frame = tabFrame
     }
     
+    // Notification center post to update on badgevalue
+    public func addBadge(notification: Notification) {
+        if let userInfo = notification.userInfo, let isAdded = userInfo["isAdded"] as? Bool {
+            let item = tabBar.items![1]
+            if let value = item.badgeValue {
+                if isAdded {
+                    item.badgeValue = "\(Int(value)! + 1)"
+                }
+                else {
+                    let badge = Int(value)! - 1
+                    item.badgeValue = badge == 0 ? nil : "\(badge)"
+                }
+            }
+            else {
+                item.badgeValue = "1"
+            }
+        }
+    }
+    
+    // Configure View Controller
     private func configureView() {
         
         for (index, item) in tabBar.items!.enumerated() {
@@ -34,7 +54,12 @@ public class TabViewController: UITabBarController {
             item.tag = index
             item.imageInsets =  insets
             item.image = item.selectedImage!.imageWithColor(color: Color.second).withRenderingMode(.alwaysOriginal)
+            item.badgeColor = Color.primary
         }
         tabBar.sizeThatFits(CGSize(width:view.frame.width, height: 38.0))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addBadge(notification:)), name: postBadge, object: nil)
     }
+    
+    
 }

@@ -28,6 +28,7 @@ public class CartSectionView: UIView {
         loadViewFromNib()
     }
     
+    //Load Nib 
     private func loadViewFromNib() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: CartSectionView.self), bundle: bundle)

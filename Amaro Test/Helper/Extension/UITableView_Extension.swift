@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TableView Reusable
 extension UITableView {
     public func registerReusableCell<T: UITableViewCell>(_: T.Type) where T: Reusable {
         if let nib = T.nib {

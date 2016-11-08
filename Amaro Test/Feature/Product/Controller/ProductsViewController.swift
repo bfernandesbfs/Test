@@ -38,11 +38,11 @@ public class ProductsViewController: UIViewController {
         }
     }
     
-    
+    // Create Action sheet to select an filter
     private func showOption() {
         let alertController = UIAlertController(title: String.localized(id: "label.Search.title"), message: String.localized(id: "label.Search.message"), preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: String.localized(id: "label.Search.cencel"),style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: String.localized(id: "label.Search.cancel"),style: .cancel, handler: nil)
         
         let onSale = UIAlertAction(title: String.localized(id: "label.Search.withDiscount"), style: .default) { (action:UIAlertAction!) in
             self.isFilter = true
@@ -68,7 +68,7 @@ public class ProductsViewController: UIViewController {
 }
 
 extension ProductsViewController: ControllerDelegate {
-    
+    // Delegate Controller to update
     public func didUpdate() {
         let transition = CATransition()
         transition.type = kCATransitionFade
@@ -92,6 +92,7 @@ extension ProductsViewController: ControllerDelegate {
 
 extension ProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, OnSaleHeaderViewDelegate {
     
+    // CollectionView delegate and datasource
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -121,6 +122,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         return headerView
     }
     
+    // Listen of cell on header view
     public func didSelectedItemOfCollection(data: ProductData) {
         performSegue(withIdentifier: "segueDetail", sender: viewModel.selectedHeader(product: data))
     }

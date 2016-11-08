@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Protocol View Model to Product Controller 
 public protocol ProductViewProtocol {
     
     init(target: ControllerDelegate)

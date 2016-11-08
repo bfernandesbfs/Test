@@ -10,6 +10,7 @@ import Foundation
 
 public class DetailViewModel: DetailViewProtocol {
     
+    // Var
     public var image: String
     public var name: String
     public var color: String
@@ -41,6 +42,7 @@ public class DetailViewModel: DetailViewProtocol {
         sizes = []
     }
     
+    // Load Data
     public func load() {
         if let product = service.get(at: index) {
             image = product.image
@@ -59,6 +61,7 @@ public class DetailViewModel: DetailViewProtocol {
         
     }
     
+    // Add item on Cart
     public func addCart() {
         service.addCart(at: index, quantity: 1)
     }

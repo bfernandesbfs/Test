@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Reusable to TableView and CollectionView 
 public protocol Reusable: class {
     static var reuseIdentifier: String { get }
     static var nib: UINib? { get }

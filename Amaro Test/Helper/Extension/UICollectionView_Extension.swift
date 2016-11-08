@@ -8,6 +8,7 @@
 
 import UIKit
 
+// CollectionView Reusable 
 public extension UICollectionView {
     public func registerReusableCell<T: UICollectionViewCell>(_: T.Type) where T: Reusable {
         if let nib = T.nib {

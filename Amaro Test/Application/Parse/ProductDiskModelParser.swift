@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Parse Json to Product 
 private struct JSONKeys {
     static let name = "name"
     static let style = "style"

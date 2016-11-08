@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Load url
 public extension UIImageView {
     
     public func imageFromURL(url:String, placeholderImage: UIImage? = nil, animate: Bool = false, onFinish:(() -> Void)?) {
@@ -56,6 +57,7 @@ public extension UIImageView {
     }
 }
 
+// Color image to tab bar selected tab
 extension UIImage {
     public func imageWithColor(color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)

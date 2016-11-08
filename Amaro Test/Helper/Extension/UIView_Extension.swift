@@ -13,6 +13,7 @@ private let defaultShadowRadius: Float = 4.0
 private let defaultShadowOpacity: Float = 0.10
 private let defaultCornerRadius: Float = 0
 
+// Apply shadow on any view and corner radius
 extension UIView {
     
     public func delay(milliseconds:Int = 600, finished: @escaping () -> Void) {
@@ -50,6 +51,7 @@ extension UIView {
     }
 }
 
+// Add list of label to the sizes product
 extension UIView {
     
     public static func tagsTo(view: UIView?, texts: [String], fontSize: CGFloat) {

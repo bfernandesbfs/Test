@@ -27,12 +27,8 @@ public class CartViewController: UIViewController {
         super.viewWillAppear(animated)
         viewModel.load()
     }
-
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // Action Button to Delete itens of Cart
     @IBAction func deleteItemButtonPressed(_ sender: UIButton, forEvent event: UIEvent) {
         
         let buttonPosition = sender.convert(CGPoint.zero, to: tableView!)
@@ -46,12 +42,14 @@ public class CartViewController: UIViewController {
                 tableView.deleteRows(at: [indexPath], with: .left)
             }
             didUpdate()
+            
+            NotificationCenter.default.post(name: postBadge, object: self, userInfo: ["isAdded": false])
         }
     }
 }
 
 extension CartViewController: ControllerDelegate {
-    
+    // Delegate Controller to update
     public func didUpdate() {
         let transition = CATransition()
         transition.type = kCATransitionFade
@@ -75,7 +73,7 @@ extension CartViewController: ControllerDelegate {
 }
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
-    
+    //TableView methods of Delegate and Datasource
     public func numberOfSections(in tableView: UITableView) -> Int {
         tableView.backgroundView = nil
         if viewModel.count() == 0 {

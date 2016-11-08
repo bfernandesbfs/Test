@@ -12,7 +12,9 @@ public class OnSaleHeaderView: UICollectionReusableView, Reusable {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageView: UIPageControl!
     
+    // Var
     fileprivate var collectionViewFlowLayout: CollectionViewFlowLayout!
+    // Timer to animation header view
     fileprivate var timer:Timer!
     
     public weak var delegate: OnSaleHeaderViewDelegate?
@@ -87,6 +89,7 @@ extension OnSaleHeaderView: UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     
+    // Next item and reset
     public func scrollToNext() {
         let indexPath: IndexPath
 

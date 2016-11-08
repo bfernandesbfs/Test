@@ -125,7 +125,7 @@
 		154E73F21DD1148E00DE65B3 /* CartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartData.swift; sourceTree = "<group>"; };
 		154E73F41DD129E000DE65B3 /* BUIStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUIStepper.swift; sourceTree = "<group>"; };
 		154E73F61DD13A0200DE65B3 /* CartSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartSectionView.swift; sourceTree = "<group>"; };
-		154E73F81DD13A1500DE65B3 /* CartSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartSectionView.xib; sourceTree = "<group>"; };
+		154E73F81DD13A1500DE65B3 /* CartSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartSectionView.xib; path = ../CartSectionView.xib; sourceTree = "<group>"; };
 		15CF71DC1DD1FDF90044A6DF /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		15CF71DE1DD22CF80044A6DF /* OnSaleHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnSaleHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		15CF71E01DD232550044A6DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -181,16 +181,13 @@
 		150A11C11DCD2566002397E4 /* Amaro Test */ = {
 			isa = PBXGroup;
 			children = (
+				150A11C21DCD2566002397E4 /* AppDelegate.swift */,
 				150A11F81DCD29A8002397E4 /* Application */,
 				150A11F31DCD26F7002397E4 /* Model */,
 				154E73A61DCF663200DE65B3 /* Feature */,
 				154E73B21DCF6B5400DE65B3 /* Helper */,
 				150A11F01DCD2621002397E4 /* Resources */,
 				15CF71E11DD233300044A6DF /* Support files */,
-				150A11C21DCD2566002397E4 /* AppDelegate.swift */,
-				150A11C61DCD2566002397E4 /* Main.storyboard */,
-				154E73F81DD13A1500DE65B3 /* CartSectionView.xib */,
-				150A11CB1DCD2566002397E4 /* LaunchScreen.storyboard */,
 			);
 			path = "Amaro Test";
 			sourceTree = "<group>";
@@ -217,6 +214,9 @@
 		150A11F01DCD2621002397E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				150A11C61DCD2566002397E4 /* Main.storyboard */,
+				154E73F81DD13A1500DE65B3 /* CartSectionView.xib */,
+				150A11CB1DCD2566002397E4 /* LaunchScreen.storyboard */,
 				150A11F11DCD26AC002397E4 /* products.json */,
 			);
 			path = Resources;
@@ -721,6 +721,7 @@
 				15CF71E01DD232550044A6DF /* pt-BR */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		150A11CB1DCD2566002397E4 /* LaunchScreen.storyboard */ = {
@@ -729,6 +730,7 @@
 				150A11CC1DCD2566002397E4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		15CF71E71DD236CF0044A6DF /* Localizable.strings */ = {

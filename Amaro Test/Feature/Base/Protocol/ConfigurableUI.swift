@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Protocol ConfigurableUI
 public protocol ConfigurableUI {
     func configureUI()
     func render()

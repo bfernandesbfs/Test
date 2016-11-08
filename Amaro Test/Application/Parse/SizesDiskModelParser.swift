@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Parse Json to ProductSize
 private struct JSONKeys {
     static let available = "available"
     static let size = "size"

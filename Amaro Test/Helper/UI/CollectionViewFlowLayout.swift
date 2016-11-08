@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Flow Layout to header View
 public class CollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override public func prepare() {
